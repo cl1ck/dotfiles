@@ -1,0 +1,203 @@
+# Mod key (win key)
+set $mod Mod4
+
+# Font
+font -xos4-terminus-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
+
+# Wallpaper
+exec --no-startup-id nitrogen --restore
+
+# load 
+exec --no-startup-id xrdb ~/.Xresources
+
+# turn off screen after 10 minutes
+exec --no-startup-id xset dpms 600
+
+# compositing
+exec --no-startup-id xcompmgr
+
+# gnome bindings
+#exec --no-startup-id /usr/libexec/gnome-settings-daemon
+exec --no-startup-id gnome-session-fallback
+
+# network manager
+#exec --no-startup-id nm-applet
+
+# volume
+#exec --no-startup-id volti
+
+# ubuntu menu
+#exec --no-startup-id classicmenu-indicator
+
+# Start default terminal
+bindsym $mod+Return exec x-terminal-emulator
+
+# Start browser
+bindsym $mod+b exec chromium-browser
+
+# Start file manager
+bindsym $mod+t exec thunar
+
+# Start dmenu
+bindsym $mod+d exec dmenu_run
+
+
+# Scratchpad
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
+# Workspace names
+workspace "subbass" output DVI-I-1
+workspace "Web" output DVI-I-1
+workspace "etc" output DVI-I-1
+workspace "touch" output DVI-D-0
+
+# Window colors
+client.focused          #eeeeee #355C7D #ffffff #000000
+client.focused_inactive	#cccccc #000000 #ffffff #000000
+client.unfocused        #000000 #000000 #888888 #000000
+client.urgent           #ff7a00 #ff7a00 #ffffff #B83602
+
+# Window pixels
+new_window 1pixel
+new_float 1pixel
+#hide_edge_borders horizontal
+
+# Float special windows
+for_window [class="XFontsel"] floating enable
+for_window [class="Nitrogen"] floating enable
+
+# Switch workspces
+bindsym $mod+1 workspace "subbass"
+bindsym $mod+2 workspace "Web"
+bindsym $mod+3 workspace "etc"
+bindsym $mod+4 workspace "touch"
+
+# Change focused window
+bindsym $mod+Left  focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up    focus up
+bindsym $mod+Down  focus down
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Move focused window
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Down  move down
+
+# Resize focused window
+bindsym $mod+Ctrl+Left resize shrink width 5px or 5 ppt
+bindsym $mod+Ctrl+Right resize grow width 5px or 5 ppt
+bindsym $mod+Ctrl+Down resize shrink height 5px or 5 ppt
+bindsym $mod+Ctrl+Up resize grow height 5px or 5 ppt
+
+# Change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# Change parent container
+bindsym $mod+a focus parent
+
+# Move focused containers
+bindsym $mod+Shift+1    move container to workspace "subbass"; workspace "subbass"
+bindsym $mod+Shift+2    move container to workspace "Web"; workspace "Web"
+bindsym $mod+Shift+3 	move container to workspace "etc"; workspace "etc"
+bindsym $mod+Shift+4	move container to workspace "touch"; workspace "touch"
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Floating modifier for mouse use
+floating_modifier $mod
+
+# Split orientation
+bindsym $mod+v split v
+bindsym $mod+h split h
+
+# Toggle fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle resize
+bindsym $mod+r mode "layout"
+bindsym $mod+Shift+Return mode "layout"
+floating_minimum_size 160 x 135
+
+# resize windows
+mode "layout" {
+    bindsym Shift+Left 	resize shrink width  5px or 5 ppt
+    bindsym Shift+Up 	resize grow height 5px or 5 ppt
+    bindsym Shift+Down	resize shrink height 5px or 5 ppt
+    bindsym Shift+Right	resize grow width  5px or 5 ppt
+    bindsym Ctrl+Shift+Left 	resize shrink width  10px or 10 ppt
+    bindsym Ctrl+Shift+Up 	resize grow height 10px or 10 ppt
+    bindsym Ctrl+Shift+Down	resize shrink height 10px or 10 ppt
+    bindsym Ctrl+Shift+Right	resize grow width  10px or 10 ppt
+    bindsym Left 	move left
+    bindsym Up		move up
+    bindsym Right	move right
+    bindsym Down	move down
+    bindsym Shift+1    	move container to workspace "subbass"; workspace "subbass"
+    bindsym Shift+2    	move container to workspace "Web"; workspace "Web"
+    bindsym Shift+3	move container to workspace "etc"; workspace "etc"
+    bindsym Shift+4	move container to workspace "touch"; workspace "touch"
+
+    bindsym 1 exec --no-startup-id transset -a 1
+    bindsym 2 exec --no-startup-id transset -a 0.9
+    bindsym 3 exec --no-startup-id transset -a 0.8
+    bindsym 4 exec --no-startup-id transset -a 0.7
+    bindsym 5 exec --no-startup-id transset -a 0.6
+    bindsym 6 exec --no-startup-id transset -a 0.5
+    bindsym 7 exec --no-startup-id transset -a 0.4
+    bindsym 8 exec --no-startup-id transset -a 0.3
+    bindsym 9 exec --no-startup-id transset -a 0.2
+    bindsym 0 exec --no-startup-id transset -a 0.1
+    
+    # exit resize mode
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+# Reload, restart, ext
+bindsym $mod+Shift+C reload
+bindsym $mod+Shift+R restart
+bindsym $mod+Shift+E exit
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id /home/rdg/bin/i3exit lock, mode "default"
+    bindsym e exec --no-startup-id /home/rdg/bin/i3exit logout, mode "default"
+    bindsym s exec --no-startup-id /home/rdg/bin/i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id /home/rdg/bin/i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id /home/rdg/bin/i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id /home/rdg/bin/i3exit shutdown, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Pause mode "$mode_system"
+
+# configure bar
+bar {
+    status_command i3status --config ~/.i3status.conf    
+    position          bottom
+    workspace_buttons yes
+    tray_output       none
+    
+    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    font xft:Terminus 12
+
+    colors {
+        background #1f1f1f
+        statusline #cc9797
+
+        focused_workspace  #1f1f1f #1f1f1f #a2c1de
+        active_workspace   #1f1f1f #1f1f1f #acc1de
+        inactive_workspace #1f1f1f #1f1f1f #677b8a
+        urgent_workspace   #1f1f1f #1f1f1f #cc9797
+    }
+}
