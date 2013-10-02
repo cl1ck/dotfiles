@@ -17,8 +17,8 @@ exec --no-startup-id xset dpms 600
 exec --no-startup-id xcompmgr
 
 # gnome bindings
-#exec --no-startup-id /usr/libexec/gnome-settings-daemon
-exec --no-startup-id gnome-session-fallback
+exec --no-startup-id gnome-settings-daemon
+#exec --no-startup-id gnome-session-fallback
 
 # network manager
 #exec --no-startup-id nm-applet
@@ -66,6 +66,8 @@ new_float 1pixel
 # Float special windows
 for_window [class="XFontsel"] floating enable
 for_window [class="Nitrogen"] floating enable
+for_window [class="Thunar" title="File Operation Progress"] floating enable
+
 
 # Switch workspces
 bindsym $mod+1 workspace "subbass"
@@ -121,6 +123,12 @@ bindsym $mod+h split h
 # Toggle fullscreen
 bindsym $mod+f fullscreen
 
+# Multimedia keys
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPlay exec mpc_toggle
+bindsym XF86AudioMute exec alsamute
+
 # Toggle resize
 bindsym $mod+r mode "layout"
 bindsym $mod+Shift+Return mode "layout"
@@ -146,10 +154,10 @@ mode "layout" {
     bindsym Shift+4	move container to workspace "touch"; workspace "touch"
 
     bindsym 1 exec --no-startup-id transset -a 1
-    bindsym 2 exec --no-startup-id transset -a 0.9
-    bindsym 3 exec --no-startup-id transset -a 0.8
-    bindsym 4 exec --no-startup-id transset -a 0.7
-    bindsym 5 exec --no-startup-id transset -a 0.6
+    bindsym 2 exec --no-startup-id transset -a 0.95
+    bindsym 3 exec --no-startup-id transset -a 0.9
+    bindsym 4 exec --no-startup-id transset -a 0.8
+    bindsym 5 exec --no-startup-id transset -a 0.65
     bindsym 6 exec --no-startup-id transset -a 0.5
     bindsym 7 exec --no-startup-id transset -a 0.4
     bindsym 8 exec --no-startup-id transset -a 0.3
@@ -184,9 +192,10 @@ bindsym $mod+Pause mode "$mode_system"
 # configure bar
 bar {
     status_command ~/.i3/conky.sh
-    position          bottom
+    position          top
     workspace_buttons yes
-    tray_output       none
+    tray_output       DVI-I-1
+    #tray_output    none
     
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     font xft:Terminus 12

@@ -18,5 +18,5 @@ TEXT
  { "full_text" : "${mem}" },
  { "full_text" : "Wifi" , "color" : "\#b72f62" } ,
  { "full_text" : "${wireless_essid wlan0}(${wireless_link_qual wlan0}/${wireless_link_qual_max wlan0})" } ,
- { "full_text" : "Fecha" , "color" : "\#b492b6" } , 
- { "full_text" : "${time %d.%m.%Y %H:%M:%S}" }] ,
+ { "full_text" : "" , "color" : "\#b492b6" } , 
+ { "full_text" : "${time %d.%m.%Y %H:%M}" }] ,
