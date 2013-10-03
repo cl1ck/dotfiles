@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font
-font -xos4-terminus-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
+font -xos4-fixed-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
 
 # Wallpaper
 exec --no-startup-id nitrogen --restore
@@ -16,31 +16,27 @@ exec --no-startup-id xset dpms 600
 # compositing
 exec --no-startup-id xcompmgr
 
+# music server
+exec --no-startup-id mpd /home/rdg/.mpd/mpd.conf
+
 # gnome bindings
 exec --no-startup-id gnome-settings-daemon
-#exec --no-startup-id gnome-session-fallback
 
-# network manager
-#exec --no-startup-id nm-applet
+# systray
+exec --no-startup-id nm-applet
+exec --no-startup-id volti
+exec --no-startup-id classicmenu-indicator
 
-# volume
-#exec --no-startup-id volti
-
-# ubuntu menu
-#exec --no-startup-id classicmenu-indicator
-
-# Start default terminal
+# application bindings
 bindsym $mod+Return exec x-terminal-emulator
-
-# Start browser
+bindsym $mod+u exec urxvt
+bindsym $mod+g exec gvim
 bindsym $mod+b exec chromium-browser
-
-# Start file manager
 bindsym $mod+t exec thunar
+bindsym $mod+p exec subl
 
 # Start dmenu
 bindsym $mod+d exec dmenu_run
-
 
 # Scratchpad
 bindsym $mod+minus scratchpad show
@@ -58,16 +54,14 @@ client.focused_inactive	#cccccc #000000 #ffffff #000000
 client.unfocused        #000000 #000000 #888888 #000000
 client.urgent           #ff7a00 #ff7a00 #ffffff #B83602
 
-# Window pixels
+# window border
 new_window 1pixel
-new_float 1pixel
-#hide_edge_borders horizontal
 
 # Float special windows
-for_window [class="XFontsel"] floating enable
+for_window [class="XFontsel"] floating enable; border normal
 for_window [class="Nitrogen"] floating enable
-for_window [class="Thunar" title="File Operation Progress"] floating enable
-
+for_window [class="Thunar" title="File Operation Progress"] floating enable; border normal
+for_window [class="Xmessage"] floating enable; border normal
 
 # Switch workspces
 bindsym $mod+1 workspace "subbass"
