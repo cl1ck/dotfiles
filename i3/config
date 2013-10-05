@@ -71,12 +71,7 @@ for_window [class="Firefox" window_role="Manager"] floating enable; border norma
 for_window [class="Firefox" title="Add Downloads"] floating enable; border normal
 for_window [class="Firefox" title="DownThemAll! - Make Your Selection"] floating enable; border normal
 for_window [class="defcon.bin.x86_64"] floating enable; border none
-
-# Switch workspces
-bindsym $mod+1 workspace "subbass"
-bindsym $mod+2 workspace "Web"
-bindsym $mod+3 workspace "etc"
-bindsym $mod+4 workspace "touch"
+for_window [class="Gcr-prompter"] floating enable; border normak
 
 # Change focused window
 bindsym $mod+Left  focus left
@@ -174,7 +169,7 @@ mode "layout" {
 
 # Reload, restart, ext
 bindsym $mod+Shift+C reload
-bindsym $mod+Shift+R restart
+bindsym $mod+Shift+R exec --no-startup-id killall conky; restart
 # bindsym $mod+Shift+E exit
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -198,6 +193,7 @@ bar {
     position          top
     workspace_buttons yes
     tray_output       DVI-D-0
+    #tray_output     DVI-I-1
     #tray_output    none
     
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
