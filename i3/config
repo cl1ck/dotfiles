@@ -58,10 +58,19 @@ client.urgent           #ff7a00 #ff7a00 #ffffff #B83602
 new_window 1pixel
 
 # Float special windows
+for_window [window_role="pop-up"] floating enable; border normal
 for_window [class="XFontsel"] floating enable; border normal
-for_window [class="Nitrogen"] floating enable
+for_window [class="Nitrogen"] floating enable; border none
 for_window [class="Thunar" title="File Operation Progress"] floating enable; border normal
 for_window [class="Xmessage"] floating enable; border normal
+for_window [class="Sublime_text" window_role="GtkFileChooserDialog"] floating enable; border normal
+for_window [class="VirtualBox"] floating enable; border normal
+#for_window [class="Steam"] floating enable; border normal
+for_window [title="exe"] floating enable; border none
+for_window [class="Firefox" window_role="Manager"] floating enable; border normal
+for_window [class="Firefox" title="Add Downloads"] floating enable; border normal
+for_window [class="Firefox" title="DownThemAll! - Make Your Selection"] floating enable; border normal
+for_window [class="defcon.bin.x86_64"] floating enable; border none
 
 # Switch workspces
 bindsym $mod+1 workspace "subbass"
@@ -166,7 +175,7 @@ mode "layout" {
 # Reload, restart, ext
 bindsym $mod+Shift+C reload
 bindsym $mod+Shift+R restart
-bindsym $mod+Shift+E exit
+# bindsym $mod+Shift+E exit
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -188,7 +197,7 @@ bar {
     status_command ~/.i3/conky.sh
     position          top
     workspace_buttons yes
-    tray_output       DVI-I-1
+    tray_output       DVI-D-0
     #tray_output    none
     
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1

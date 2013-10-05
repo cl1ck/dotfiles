@@ -123,7 +123,7 @@ set nocompatible               " be iMproved
 " }}}
 " {{{ Ctrl+C / Ctrl+V
   nmap <C-V> "+gP
-  imap <C-V> <ESC><C-V>i
+  imap <C-V> <ESC><C-V>a 
   vmap <C-C> "+y
 " }}}
 " {{{ Window movement

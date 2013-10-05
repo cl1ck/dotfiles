@@ -1,0 +1,32 @@
+#!/bin/sh
+lock() {
+    gnome-screensaver-command -l
+}
+
+case "$1" in
+    lock)
+        lock && xset dpms force off
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+	logger Suspending from i3
+        lock && sudo pm-suspend
+        ;;
+    hibernate)
+	logger Hibernating from i3
+        lock && sudo pm-hibernate
+        ;;
+    reboot)
+        sudo shutdown now -r
+        ;;
+    shutdown)
+        sudo shutdown now
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+exit 0
