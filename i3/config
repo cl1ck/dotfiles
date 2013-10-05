@@ -102,6 +102,12 @@ bindsym $mod+e layout default
 # Change parent container
 bindsym $mod+a focus parent
 
+# Switch workspces
+bindsym $mod+1 workspace "subbass"
+bindsym $mod+2 workspace "Web"
+bindsym $mod+3 workspace "etc"
+bindsym $mod+4 workspace "touch"
+
 # Move focused containers
 bindsym $mod+Shift+1    move container to workspace "subbass"; workspace "subbass"
 bindsym $mod+Shift+2    move container to workspace "Web"; workspace "Web"
