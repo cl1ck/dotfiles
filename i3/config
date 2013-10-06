@@ -36,7 +36,9 @@ bindsym $mod+u exec urxvt
 bindsym $mod+g exec gvim
 bindsym $mod+b exec chromium-browser
 bindsym $mod+Shift+b exec firefox
-bindsym $mod+t exec thunar
+bindsym $mod+t exec pcmanfm
+#bindsym $mod+t exec nautilus
+#bindsym $mod+t exec thunar
 bindsym $mod+p exec subl
 
 # Start dmenu
