@@ -7,7 +7,7 @@ font -xos4-fixed-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
 # Wallpaper
 exec --no-startup-id nitrogen --restore
 
-# load 
+# load xresources
 exec --no-startup-id xrdb ~/.Xresources
 
 # turn off screen after 10 minutes
@@ -22,16 +22,20 @@ exec --no-startup-id mpd /home/rdg/.mpd/mpd.conf
 # gnome bindings
 exec --no-startup-id gnome-settings-daemon
 
-# systray
+# systray apps
 exec --no-startup-id nm-applet
 exec --no-startup-id volti
 exec --no-startup-id classicmenu-indicator
+
+# additional apps
+exec --no-startup-id owncloud
 
 # application bindings
 bindsym $mod+Return exec x-terminal-emulator
 bindsym $mod+u exec urxvt
 bindsym $mod+g exec gvim
 bindsym $mod+b exec chromium-browser
+bindsym $mod+Shift+b exec firefox
 bindsym $mod+t exec thunar
 bindsym $mod+p exec subl
 
@@ -65,13 +69,14 @@ for_window [class="Thunar" title="File Operation Progress"] floating enable; bor
 for_window [class="Xmessage"] floating enable; border normal
 for_window [class="Sublime_text" window_role="GtkFileChooserDialog"] floating enable; border normal
 for_window [class="VirtualBox"] floating enable; border normal
-#for_window [class="Steam"] floating enable; border normal
+for_window [class="Steam"] floating enable; border normal
 for_window [title="exe"] floating enable; border none
 for_window [class="Firefox" window_role="Manager"] floating enable; border normal
 for_window [class="Firefox" title="Add Downloads"] floating enable; border normal
 for_window [class="Firefox" title="DownThemAll! - Make Your Selection"] floating enable; border normal
 for_window [class="defcon.bin.x86_64"] floating enable; border none
-for_window [class="Gcr-prompter"] floating enable; border normak
+for_window [class="Gcr-prompter"] floating enable; border normal
+for_window [class="X3AP_config"] floating enable; border normal
 
 # Change focused window
 bindsym $mod+Left  focus left
