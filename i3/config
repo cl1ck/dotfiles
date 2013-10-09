@@ -82,6 +82,7 @@ for_window [class="Gcr-prompter"] floating enable; border normal
 for_window [class="X3AP_config"] floating enable; border normal
 for_window [class="Vidalia"] floating enable; border normal
 for_window [class="SRRemote.pyc"] floating enable; border normal
+for_window [title="https://pinboard.in - Pinboard - Save a Bookmark - Mozilla Firefox"] floating enable; border normal
 
 # Change focused window
 bindsym $mod+Left  focus left

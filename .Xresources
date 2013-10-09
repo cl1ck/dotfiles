@@ -1,5 +1,5 @@
 ! URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
-URxvt.font: xft:Monospace:size=9:antialias=true
+URxvt.font: xft:Monospace:pixelsize=12:antialias=true
 ! URxvt.font: xft:Consolas:size=11
 ! urxvt*font:             xft:Terminus:size=11
 ! urxvt*font:             xft:Bitstream Vera Sans Mono:size=10
@@ -16,7 +16,8 @@ Xft*antialias:          true
 Xft*hinting:            full
 URxvt.depth:            32
 !URxvt.background:       rgba:a2a2/2a2a/2a2a/1111
-URxvt*.background:       [90]#1d1f21
+!URxvt*.background:       [90]#1d1f21
+URxvt*.background:  [90]#1a1b17
 URxvt.iso14755: 	false
 URxvt.keysym.C-C: 	perl:clipboard:copy
 URxvt.keysym.C-V: 	perl:clipboard:paste

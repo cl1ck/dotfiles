@@ -920,3 +920,5 @@ complete -F _killall killall killps
 # mode:shell-script
 # sh-shell:bash
 # End:
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
