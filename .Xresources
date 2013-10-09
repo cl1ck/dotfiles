@@ -1,4 +1,6 @@
 ! URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+
+#include "repos/dotfiles/Xdefaults/colorthemes/xoria256.xresources"
 URxvt.font: xft:Monospace:pixelsize=12:antialias=true
 ! URxvt.font: xft:Consolas:size=11
 ! urxvt*font:             xft:Terminus:size=11
@@ -17,7 +19,7 @@ Xft*hinting:            full
 URxvt.depth:            32
 !URxvt.background:       rgba:a2a2/2a2a/2a2a/1111
 !URxvt*.background:       [90]#1d1f21
-URxvt*.background:  [90]#1a1b17
+URxvt*.background:  [95]#1c1c1c
 URxvt.iso14755: 	false
 URxvt.keysym.C-C: 	perl:clipboard:copy
 URxvt.keysym.C-V: 	perl:clipboard:paste
@@ -26,7 +28,9 @@ URxvt.keysym.C-A-V: 	perl:clipboard:paste_escaped
 !#include "repos/tomorrow-theme/Xdefaults/XresourceTomorrowNightBright"
 !#include "repos/base16-xresources/base16-railscasts.dark.xresources"
 !#include "repos/base16-xresources/base16-monokai.dark.xresources"
-!#include "repos/base16-xresources/base16-bright.dark.xresources"
+!#include "repos/dotfiles/Xdefaults/colorthemes/monokai.dark2.xresources"
+!#include "repos/dotfiles/Xdefaults/colorthemes/xoria256.xresources"
+!#include "repos/dotfiles/Xdefaults/colorthemes/jellybeans.xresources"
 !#include "repos/base16-xresources/base16-chalk.dark.xresources"
 !#include "repos/base16-xresources/base16-default.dark.xresources"
 !#include "repos/base16-xresources/base16-eighties.dark.xresources"
@@ -35,4 +39,4 @@ URxvt.keysym.C-A-V: 	perl:clipboard:paste_escaped
 !#include "repos/base16-xresources/base16-ocean.dark.xresources"
 !#include "repos/base16-xresources/base16-pop.dark.xresources"
 !#include "repos/base16-xresources/base16-solarized.dark.xresources"
-#include "repos/base16-xresources/base16-tomorrow.dark.xresources"
+!#include "repos/base16-xresources/base16-tomorrow.dark.xresources"

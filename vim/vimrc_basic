@@ -18,10 +18,13 @@ Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/Align'
 Bundle 'lilydjwg/colorizer'
 
+" -------------------GUI ---------------------
+colorscheme jellybeans
+set gfn=Consolas\ 10
+
 " ------------------ GLOBAL ------------------
 let mapleader=","
 syntax on
-colorscheme jellybeans
 set hidden
 set wildmenu
 set showcmd
