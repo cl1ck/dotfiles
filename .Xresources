@@ -1,15 +1,14 @@
-! URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
-
 #include "repos/dotfiles/Xdefaults/colorthemes/xoria256.xresources"
-URxvt.font: xft:Monospace:pixelsize=12:antialias=true
-! URxvt.font: xft:Consolas:size=11
-! urxvt*font:             xft:Terminus:size=11
-! urxvt*font:             xft:Bitstream Vera Sans Mono:size=10
+URxvt.font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=12,DejaVu\ Sans\ Mono:pixelsize=12
+!urxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=13i
+!URxvt*font: xft:Source Code Pro for Powerline:pixelsize=13,xft:PowerlineSymbols:pixelsize=13
 ! urxvt.url-launcher:     /usr/bin/firefox
 ! urxvt.matcher.button:   1
 ! urxvt.colorUL: #4682B4
+
 URxvt.perl-ext-common:  default,clipboard
 URxvt.clipboard.autocopy: true
+
 !URxvt.transparent:   	true
 !URxvt.shading:       	100
 URxvt*scrollBar:        false
@@ -19,8 +18,9 @@ Xft*hinting:            full
 URxvt.depth:            32
 !URxvt.background:       rgba:a2a2/2a2a/2a2a/1111
 !URxvt*.background:       [90]#1d1f21
-URxvt*.background:  [95]#1c1c1c
-URxvt.iso14755: 	false
+URxvt*.background:      [95]#1c1c1c
+!URxvt.iso14755: 	      false
+
 URxvt.keysym.C-C: 	perl:clipboard:copy
 URxvt.keysym.C-V: 	perl:clipboard:paste
 URxvt.keysym.C-A-V: 	perl:clipboard:paste_escaped

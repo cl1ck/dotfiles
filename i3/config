@@ -22,6 +22,7 @@ exec --no-startup-id mpd /home/rdg/.mpd/mpd.conf
 # gnome bindings
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id gnome-keyring-daemon
+exec --no-startup-id gnome-do
 
 # systray apps
 exec --no-startup-id nm-applet
