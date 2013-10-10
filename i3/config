@@ -35,8 +35,8 @@ exec --no-startup-id owncloud
 bindsym $mod+Return exec x-terminal-emulator
 #bindsym $mod+u exec urxvt
 bindsym $mod+g exec gvim
-bindsym $mod+b exec chromium-browser
-bindsym $mod+Shift+b exec firefox
+bindsym $mod+Shift+b exec chromium-browser
+bindsym $mod+b exec firefox
 bindsym $mod+t exec pcmanfm
 #bindsym $mod+t exec nautilus
 #bindsym $mod+t exec thunar
