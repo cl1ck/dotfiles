@@ -1,5 +1,5 @@
 #include "repos/dotfiles/Xdefaults/colorthemes/xoria256.xresources"
-URxvt.font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=12,DejaVu\ Sans\ Mono:pixelsize=12
+URxvt.font: xft:Inconsolata:pixelsize=12,Inconsolata-dz for Powerline:pixelsize=12
 !urxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=13i
 !URxvt*font: xft:Source Code Pro for Powerline:pixelsize=13,xft:PowerlineSymbols:pixelsize=13
 ! urxvt.url-launcher:     /usr/bin/firefox
