@@ -2,7 +2,9 @@
 set $mod Mod4
 
 # Font
-font -xos4-fixed-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
+#font -xos4-fixed-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font xft:Inconsolata-dz for Powerline 8
 
 # Wallpaper
 exec --no-startup-id nitrogen --restore
@@ -33,7 +35,7 @@ exec --no-startup-id classicmenu-indicator
 exec --no-startup-id owncloud
 
 # application bindings
-bindsym $mod+Return exec x-terminal-emulator
+bindsym $mod+Return exec x-terminal-emulator && transset -a 0.8
 #bindsym $mod+u exec urxvt
 bindsym $mod+g exec gvim
 bindsym $mod+Shift+b exec chromium-browser
@@ -51,24 +53,31 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
 # Workspace names
-workspace "subbass" output DVI-I-1
-workspace "Web" output DVI-I-1
-workspace "etc" output DVI-I-1
-workspace "touch" output DVI-D-0
+workspace "☊ subbass" output DVI-I-1
+workspace "☣ Web" output DVI-I-1
+workspace "⚙ etc" output DVI-I-1
+workspace "☝ touch" output DVI-D-0
 
 # Window colors
-client.focused          #eeeeee #355C7D #ffffff #000000
-client.focused_inactive	#cccccc #000000 #ffffff #000000
-client.unfocused        #000000 #000000 #888888 #000000
-client.urgent           #ff7a00 #ff7a00 #ffffff #B83602
+client.focused          #2c2c2c #2c2c2c #ececec #2099c2
+client.focused_inactive	#2c2c2c #2c2c2c #bcbcbc #2c2c2c
+client.unfocused        #2c2c2c #2c2c2c #6c6c6c #2c2c2c
+client.urgent           #ff7a00 #ff7a00 #000000 #2c2c2c
 
 # window border
-new_window 1pixel
+new_window pixel 9
+hide_edge_borders none
+
+# window behaviour
+popup_during_fullscreen smart
+force_focus_wrapping no
+workspace_auto_back_and_forth yes
+force_display_urgency_hint 500 ms
 
 # Float special windows
 for_window [window_role="pop-up"] floating enable; border normal
 for_window [class="XFontsel"] floating enable; border normal
-for_window [class="Nitrogen"] floating enable; border none
+for_window [class="Nitrogen"] floating enable; border normal
 for_window [class="Thunar" title="File Operation Progress"] floating enable; border normal
 for_window [class="Xmessage"] floating enable; border normal
 for_window [class="Sublime_text" window_role="GtkFileChooserDialog"] floating enable; border normal
@@ -117,16 +126,16 @@ bindsym $mod+e layout default
 bindsym $mod+a focus parent
 
 # Switch workspces
-bindsym $mod+1 workspace "subbass"
-bindsym $mod+2 workspace "Web"
-bindsym $mod+3 workspace "etc"
-bindsym $mod+4 workspace "touch"
+bindsym $mod+1 workspace "☊ subbass"
+bindsym $mod+2 workspace "☣ Web"
+bindsym $mod+3 workspace "⚙ etc"
+bindsym $mod+4 workspace "☝ touch"
 
 # Move focused containers
-bindsym $mod+Shift+1    move container to workspace "subbass"; workspace "subbass"
-bindsym $mod+Shift+2    move container to workspace "Web"; workspace "Web"
-bindsym $mod+Shift+3 	move container to workspace "etc"; workspace "etc"
-bindsym $mod+Shift+4	move container to workspace "touch"; workspace "touch"
+bindsym $mod+Shift+1    move container to workspace "☊ subbass"; workspace "☊ subbass"
+bindsym $mod+Shift+2    move container to workspace "☣ Web"; workspace "☣ Web"
+bindsym $mod+Shift+3 	move container to workspace "⚙ etc"; workspace "⚙ etc"
+bindsym $mod+Shift+4	move container to workspace "☝ touch"; workspace "☝ touch"
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -150,7 +159,7 @@ bindsym XF86AudioMute exec alsamute
 # Toggle resize
 bindsym $mod+r mode "layout"
 bindsym $mod+Shift+Return mode "layout"
-floating_minimum_size 160 x 135
+floating_minimum_size 120 x 80
 
 # resize windows
 mode "layout" {
@@ -166,10 +175,10 @@ mode "layout" {
     bindsym Up		move up
     bindsym Right	move right
     bindsym Down	move down
-    bindsym Shift+1    	move container to workspace "subbass"; workspace "subbass"
-    bindsym Shift+2    	move container to workspace "Web"; workspace "Web"
-    bindsym Shift+3	move container to workspace "etc"; workspace "etc"
-    bindsym Shift+4	move container to workspace "touch"; workspace "touch"
+    bindsym Shift+1    	move container to workspace "☊ subbass"; workspace "☊ subbass"
+    bindsym Shift+2    	move container to workspace "☣ Web"; workspace "☣ Web"
+    bindsym Shift+3	move container to workspace "⚙ etc"; workspace "⚙ etc"
+    bindsym Shift+4	move container to workspace "☝ touch"; workspace "☝ touch"
 
     bindsym 1 exec --no-startup-id transset -a 1
     bindsym 2 exec --no-startup-id transset -a 0.95
@@ -209,23 +218,41 @@ bindsym $mod+Pause mode "$mode_system"
 
 # configure bar
 bar {
+    mode dock
     status_command ~/.i3/conky.sh
-    position          top
+    position          bottom
     workspace_buttons yes
-    tray_output       DVI-D-0
-    #tray_output     DVI-I-1
-    #tray_output    none
+    output     DVI-I-1
+    tray_output    none
     
-    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    font xft:Terminus 12
+    #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    #font xft:Inconsolata-dz for Powerline 8
 
     colors {
-        background #1f1f1f
+        background #1c1c1c
+        statusline #2099c2
+
+        focused_workspace  #1c1c1c #1c1c1c #ff9422
+        active_workspace   #1c1c1c #1c1c1c #2099c2
+        inactive_workspace #1c1c1c #1c1c1c #2099c2
+        urgent_workspace   #1c1c1c #ff9422 #000000
+		}
+}
+
+bar {
+    mode dock
+    output    DVI-D-0
+		tray_output DVI-D-0
+		workspace_buttons yes
+		position bottom
+
+    colors {
+        background #1c1c1c
         statusline #cc9797
 
-        focused_workspace  #1f1f1f #1f1f1f #a2c1de
-        active_workspace   #1f1f1f #1f1f1f #acc1de
-        inactive_workspace #1f1f1f #1f1f1f #677b8a
-        urgent_workspace   #1f1f1f #1f1f1f #cc9797
+        focused_workspace  #1c1c1c #1c1c1c #ff9422
+        active_workspace   #1c1c1c #1c1c1c #2099c2
+        inactive_workspace #1c1c1c #1c1c1c #2099c2
+        urgent_workspace   #1c1c1c #ff9422 #000000
     }
 }
