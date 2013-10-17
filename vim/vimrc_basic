@@ -6,7 +6,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'chrisbra/SudoEdit.vim'
-Bundle 'ervandew/supertab'
+" Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'itchyny/lightline.vim'
