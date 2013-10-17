@@ -19,4 +19,4 @@ TEXT
  { "full_text" : "Wifi" , "color" : "\#a2f221" } ,
  { "full_text" : "${wireless_essid wlan0}(${wireless_link_qual wlan0}/${wireless_link_qual_max wlan0})" } ,
  { "full_text" : "" , "color" : "\#a2f221" } , 
- { "full_text" : "${time %d.%m.%Y %H:%M}                                                                                           " }] ,
+ { "full_text" : "${time %d.%m.%Y %H:%M}                                                              " }] ,
