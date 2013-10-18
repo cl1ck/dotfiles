@@ -1,42 +1,28 @@
-#include "repos/dotfiles/Xdefaults/colorthemes/xoria256.xresources"
-URxvt.font: xft:Inconsolata:pixelsize=12,Inconsolata-dz for Powerline:pixelsize=12
-!urxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=13i
-!URxvt*font: xft:Source Code Pro for Powerline:pixelsize=13,xft:PowerlineSymbols:pixelsize=13
+!#include "repos/dotfiles/Xdefaults/colorthemes/xoria256.xresources"
+#include "repos/dotfiles/Xdefaults/colorthemes/rootdigga2.xresources"
+URxvt*font: xft:Liberation Mono for Powerline:pixelsize=11
 ! urxvt.url-launcher:     /usr/bin/firefox
 ! urxvt.matcher.button:   1
 ! urxvt.colorUL: #4682B4
 
 URxvt.perl-ext-common:  default,clipboard
 URxvt.clipboard.autocopy: true
+URxvt.scrollBar:        false
+URxvt.xftAutoHint:			true
 
-!URxvt.transparent:   	true
-!URxvt.shading:       	100
-URxvt*scrollBar:        false
-Xft*dpi:                96
-Xft*antialias:          true
-Xft*hinting:            full
+Xft.dpi:                96
+Xft.antialias:          1
+Xft.autohint:						0
+Xft.hinting:            1
+Xft.rgba:								rgb
+Xft.hintstyle:					hintfull
+Xft.lcdfilter:					lxddefault
+
 URxvt.depth:            32
-!URxvt.background:       rgba:a2a2/2a2a/2a2a/1111
-!URxvt*.background:       [90]#1d1f21
-URxvt*.background:      [95]#1c1c1c
-!URxvt.iso14755: 	      false
+URxvt..background:      [95]#1c1c1c
+URxvt.iso14755: 	      false
 
-URxvt.keysym.C-C: 	perl:clipboard:copy
-URxvt.keysym.C-V: 	perl:clipboard:paste
-URxvt.keysym.C-A-V: 	perl:clipboard:paste_escaped
+URxvt.keysym.C-C: 			perl:clipboard:copy
+URxvt.keysym.C-V: 			perl:clipboard:paste
+URxvt.keysym.C-A-V: 		perl:clipboard:paste_escaped
 
-!#include "repos/tomorrow-theme/Xdefaults/XresourceTomorrowNightBright"
-!#include "repos/base16-xresources/base16-railscasts.dark.xresources"
-!#include "repos/base16-xresources/base16-monokai.dark.xresources"
-!#include "repos/dotfiles/Xdefaults/colorthemes/monokai.dark2.xresources"
-!#include "repos/dotfiles/Xdefaults/colorthemes/xoria256.xresources"
-!#include "repos/dotfiles/Xdefaults/colorthemes/jellybeans.xresources"
-!#include "repos/base16-xresources/base16-chalk.dark.xresources"
-!#include "repos/base16-xresources/base16-default.dark.xresources"
-!#include "repos/base16-xresources/base16-eighties.dark.xresources"
-!#include "repos/base16-xresources/base16-greenscreen.dark.xresources"
-!#include "repos/base16-xresources/base16-mocha.dark.xresources"
-!#include "repos/base16-xresources/base16-ocean.dark.xresources"
-!#include "repos/base16-xresources/base16-pop.dark.xresources"
-!#include "repos/base16-xresources/base16-solarized.dark.xresources"
-!#include "repos/base16-xresources/base16-tomorrow.dark.xresources"
