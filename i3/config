@@ -66,7 +66,7 @@ workspace "☝ touch" output DVI-D-0
 client.focused          #2c2c2c #2c2c2c #ececec #2099c2
 client.focused_inactive	#2c2c2c #2c2c2c #bcbcbc #2c2c2c
 client.unfocused        #2c2c2c #2c2c2c #6c6c6c #2c2c2c
-client.urgent           #ff7a00 #ff7a00 #000000 #2c2c2c
+client.urgent           #ff9422 #ff9422 #000000 #2c2c2c
 
 # window border
 new_window pixel 9
@@ -100,6 +100,9 @@ for_window [title="https://pinboard.in - Pinboard - Save a Bookmark - Mozilla Fi
 for_window [class="Wine" instance="winecfg.exe"] floating enable; border normal
 for_window [class="Qjackctl"] floating enable; border normal
 for_window [class="feh"] floating enable; fullscreen;
+for_window [class="Eog"] floating enable; fullscreen;
+for_window [title="PlayOnLinux install menu"] floating enable; border normal
+for_window [title="PlayOnLinux configuration"] floating enable; border normal
 
 # Change focused window
 bindsym $mod+Left  focus left
@@ -220,6 +223,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Pause mode "$mode_system"
+bindsym $mod+l exec --no-startup-id /home/rdg/bin/i3exit lock
 
 # configure bar
 bar {
