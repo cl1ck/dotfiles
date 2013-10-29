@@ -20,7 +20,7 @@ exec --no-startup-id xset dpms 600
 exec --no-startup-id xcompmgr
 
 # hide mouse
-exec --no-startup-id unclutter
+#exec --no-startup-id unclutter
 
 # music server
 exec --no-startup-id mpd /home/rdg/.mpd/mpd.conf
@@ -34,9 +34,13 @@ exec --no-startup-id gnome-do
 exec --no-startup-id nm-applet
 exec --no-startup-id volti
 exec --no-startup-id classicmenu-indicator
+exec --no-startup-id blueman-applet
 
 # additional apps
 exec --no-startup-id owncloud
+
+# simpleswitcher
+bindsym $mod+Tab exec simpleswitcher -i3 -now -font "snap-10" -fg "#2099c2" -bg "#1c1c1c" -hlfg "#A2F221" -hlbg "#1c1c1c" -o 90
 
 # application bindings
 bindsym $mod+Return exec x-terminal-emulator && transset -a 0.9
