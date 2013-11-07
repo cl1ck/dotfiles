@@ -9,14 +9,17 @@ ZSH=$HOME/.oh-my-zsh
 # Favourites:
 # ZSH_THEME="jispwoso"
 ZSH_THEME="josh"
+# ZSH_THEME="alanpeabody"
+# ZSH_THEME="fishy"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
-alias rm='echo "This is not the command you are looking for."; false'
+#alias rm='echo "This is not the command you are looking for."; false'
+alias rm='trash'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -44,7 +47,7 @@ alias rm='echo "This is not the command you are looking for."; false'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump extract history-substring-search)
+plugins=(git command-not-found colorize cp autojump extract history-substring-search screen composer laravel archlinux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -52,3 +55,4 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/home/rdg/bin:$PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export EDITOR=vim

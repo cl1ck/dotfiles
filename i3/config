@@ -28,13 +28,13 @@ exec --no-startup-id mpd /home/rdg/.mpd/mpd.conf
 # gnome bindings
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id gnome-keyring-daemon
-exec --no-startup-id gnome-do
+#exec --no-startup-id gnome-do
 
 # systray apps
 exec --no-startup-id nm-applet
-exec --no-startup-id volti
-exec --no-startup-id classicmenu-indicator
-exec --no-startup-id blueman-applet
+#exec --no-startup-id volti
+#exec --no-startup-id classicmenu-indicator
+#exec --no-startup-id blueman-applet
 
 # additional apps
 exec --no-startup-id owncloud
@@ -43,15 +43,15 @@ exec --no-startup-id owncloud
 bindsym $mod+Tab exec simpleswitcher -i3 -now -font "snap-10" -fg "#2099c2" -bg "#1c1c1c" -hlfg "#A2F221" -hlbg "#1c1c1c" -o 90
 
 # application bindings
-bindsym $mod+Return exec x-terminal-emulator && transset -a 0.9
-#bindsym $mod+u exec urxvt
-bindsym $mod+g exec gvim
-bindsym $mod+Shift+b exec chromium-browser
-bindsym $mod+b exec firefox
-bindsym $mod+t exec pcmanfm
+bindsym $mod+Return exec --no-startup-id konsole && transset-df -a 0.9
+#bindsym $mod+u exec --no-startup-id urxvt
+bindsym $mod+g exec --no-startup-id gvim
+bindsym $mod+Shift+b exec --no-startup-id chromium
+bindsym $mod+b exec --no-startup-id firefox
+#bindsym $mod+t exec pcmanfm
 #bindsym $mod+t exec nautilus
-#bindsym $mod+t exec thunar
-bindsym $mod+o exec subl
+bindsym $mod+t exec thunar
+bindsym $mod+o exec sublime
 
 # Start dmenu
 bindsym $mod+d exec dmenu_run
@@ -84,29 +84,31 @@ force_display_urgency_hint 500 ms
 
 # Float special windows
 for_window [window_role="pop-up"] floating enable; border 1
-for_window [class="XFontsel"] floating enable; border normal
-for_window [class="Nitrogen"] floating enable; border normal
-for_window [class="Thunar" title="File Operation Progress"] floating enable; border normal
-for_window [class="Xmessage"] floating enable; border normal
-for_window [class="Sublime_text" window_role="GtkFileChooserDialog"] floating enable; border normal
-for_window [class="VirtualBox"] floating enable; border normal
-for_window [class="Steam"] floating enable; border normal
-for_window [title="exe"] floating enable; border none
-for_window [class="Firefox" window_role="Manager"] floating enable; border normal
-for_window [class="Firefox" title="Add Downloads"] floating enable; border normal
-for_window [class="Firefox" title="DownThemAll! - Make Your Selection"] floating enable; border normal
+for_window [class="XFontsel"] floating enable; border 1
+for_window [class="Nitrogen"] floating enable; border 1
+for_window [class="Thunar" title="File Operation Progress"] floating enable; border 1
+for_window [class="Xmessage"] floating enable; border 1
+for_window [class="Sublime_text" window_role="GtkFileChooserDialog"] floating enable; border 1
+for_window [class="VirtualBox"] floating enable; border 1
+for_window [class="Steam"] floating enable; border 1
+for_window [title="exe"] floating enable; border 1
+for_window [class="Firefox" window_role="Manager"] floating enable; border 1
+for_window [class="Firefox" title="Add Downloads"] floating enable; border 1
+for_window [class="Firefox" title="DownThemAll! - Make Your Selection"] floating enable; border 1
 for_window [class="defcon.bin.x86_64"] floating enable; border none
-for_window [class="Gcr-prompter"] floating enable; border normal
-for_window [class="X3AP_config"] floating enable; border normal
-for_window [class="Vidalia"] floating enable; border normal
-for_window [class="SRRemote.pyc"] floating enable; border normal
-for_window [title="https://pinboard.in - Pinboard - Save a Bookmark - Mozilla Firefox"] floating enable; border normal
-for_window [class="Wine" instance="winecfg.exe"] floating enable; border normal
-for_window [class="Qjackctl"] floating enable; border normal
+for_window [class="Gcr-prompter"] floating enable; border 1
+for_window [class="X3AP_config"] floating enable; border 1
+for_window [class="Vidalia"] floating enable; border 1
+for_window [class="SRRemote.pyc"] floating enable; border 1
+for_window [title="https://pinboard.in - Pinboard - Save a Bookmark - Mozilla Firefox"] floating enable; border 1
+for_window [class="Wine" instance="winecfg.exe"] floating enable; border 1
+for_window [class="Qjackctl"] floating enable; border 1
 for_window [class="feh"] floating enable; fullscreen;
 for_window [class="Eog"] floating enable; fullscreen;
-for_window [title="PlayOnLinux install menu"] floating enable; border normal
-for_window [title="PlayOnLinux configuration"] floating enable; border normal
+for_window [title="PlayOnLinux install menu"] floating enable; border 1
+for_window [title="PlayOnLinux configuration"] floating enable; border 1
+for_window [title="PlayOnLinux"] floating enable; border 1
+for_window [class="Xfce4-notifyd"] floating enable; border none
 
 # Change focused window
 bindsym $mod+Left  focus left
