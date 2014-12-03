@@ -1,3 +1,21 @@
+! Appearence
+urxvt.scrollBar:       false
+urxvt.internalBorder:  4
+URxvt.termName:        rxvt
+
+! Plugins
+urxvt.perl-lib: /Volumes/Home/dotfiles/apps/urxvt/plugins
+urxvt.perl-ext-common:  default,-selection-popup,-option-popup,clipboard
+
+! Clipboard
+urxvt.keysym.M-c: perl:clipboard:copy
+urxvt.keysym.M-v: perl:clipboard:paste
+urxvt.clipboard.copycmd: pbcopy
+urxvt.clipboard.pastecmd: pbpaste
+
+! Fonts
+urxvt.font:      xft:DejaVu Sans Mono:size=8
+
 *background: #1C1C1C
 *foreground: #E3E3E3
 *color0: #434343
@@ -16,3 +34,5 @@
 *color14: #AFDFDF
 *color7: #E6E6E6
 *color15: #EEEEEE
+
+
