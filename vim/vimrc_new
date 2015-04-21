@@ -1,0 +1,107 @@
+" Basic settings
+set nocompatible
+set noshowmode
+
+" File settings
+set encoding=utf-8
+set fileencoding=utf-8
+scriptencoding utf-8
+
+" GUI
+set t_Co=256
+syntax on
+set background=dark
+set guifont=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+set number
+
+" Vundle:start
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Plugins
+Plugin 'gmarik/Vundle.vim'
+
+" Plugins:Interface
+Plugin 'tomasr/molokai'
+Plugin 'scrooloose/nerdtree'
+Plugin 'itchyny/lightline.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'wincent/Command-T'
+Plugin 'mileszs/ack.vim'
+" Plugin 'ryanoasis/vim-webdevicons'
+Plugin 'chriskempson/base16-vim'
+
+" Plugins:VCS
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+" Plugins:Editing
+Plugin 'tpope/vim-surround'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'Raimondi/delimitMate'
+"Plugin 'Chiel92/vim-autoformat'
+
+" Plugins:Languages
+Plugin 'pangloss/vim-javascript'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
+
+" Plugins:Webdev
+Plugin 'maksimr/vim-jsbeautify' 
+Plugin 'mattn/emmet-vim'
+Plugin 'skammer/vim-css-color'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'vim-scripts/JavaScript-Indent'
+
+" Vundle:end
+call vundle#end()
+filetype plugin indent on
+
+" Colors
+colorscheme molokai
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"x":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+      \ }
+set laststatus=2
+
+" Nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
+
+" JavaScript
+let g:javascript_enable_domhtmlcss = 1
+
+" EasyMotion
+let g:EasyMotion_do_mapping = 0
+nmap s <Plug>(easymotion-s)
+let g:EasyMotion_smartcase = 1
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" Key mappings
+map <C-n> :NERDTreeToggle<CR> i
