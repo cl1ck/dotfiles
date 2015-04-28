@@ -23,7 +23,7 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/ctrlp.vim'
-
+NeoBundle 'sjl/gundo.vim'
 if executable('ack')
   NeoBundle 'mileszs/ack.vim'
 endif
@@ -209,6 +209,11 @@ function! MyMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
+" Gundo
+nnoremap <Leader>u :GundoToggle<CR>
+let g:gundo_width = 60
+let g:gundo_preview_height = 40
+
 " Nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -224,4 +229,3 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-" Key mappings
