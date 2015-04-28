@@ -15,13 +15,14 @@
 		"command"
 	],
 
-	"mod1": [
-		"option",
-		"shift"
-	],
 	"mod2": [
 		"option",
 		"shift",
+        "control"
+	],
+	"mod2": [
+		"option",
+		"command",
 		"control"
 	],
 
@@ -65,48 +66,48 @@
 		"key": "space"
 	},
 	"cycle-layout-backward": {
-		"mod": "mod2",
-		"key": "space"
+		"mod": "mod1",
+		"key": "backspace"
 	},
 	"select-tall-layout": {
 		"mod": "mod1",
-		"key": "a"
+		"key": "x"
 	},
 	"select-wide-layout": {
 		"mod": "mod1",
-		"key": "s"
+		"key": "c"
 	},
 	"select-fullscreen-layout": {
 		"mod": "mod1",
-		"key": "d"
+		"key": "y"
 	},
 	"select-column-layout": {
 		"mod": "mod1",
-		"key": "f"
+		"key": "v"
 	},
 	"focus-screen-1": {
 		"mod": "mod1",
-		"key": "w"
+		"key": "ü"
 	},
 	"focus-screen-2": {
 		"mod": "mod1",
-		"key": "e"
+		"key": "¨"
 	},
 	"focus-screen-3": {
-		"mod": "mod1",
-		"key": "r"
+		"mod": "mod2",
+		"key": "e"
 	},
 	"focus-screen-4": {
-		"mod": "mod1",
-		"key": "q"
+		"mod": "mod2",
+		"key": "r"
 	},
 	"throw-screen-1": {
-		"mod": "mod2",
-		"key": "w"
+		"mod": "mod1",
+		"key": "ä"
 	},
 	"throw-screen-2": {
 		"mod": "mod2",
-		"key": "e"
+		"key": "$"
 	},
 	"throw-screen-3": {
 		"mod": "mod2",
@@ -118,11 +119,11 @@
 	},
 	"shrink-main": {
 		"mod": "mod1",
-		"key": "h"
+		"key": "s"
 	},
 	"expand-main": {
 		"mod": "mod1",
-		"key": "l"
+		"key": "d"
 	},
 	"increase-main": {
 		"mod": "mod1",
@@ -138,11 +139,11 @@
 	},
 	"focus-cw": {
 		"mod": "mod1",
-		"key": "k"
+		"key": "w"
 	},
 	"swap-screen-ccw": {
-		"mod": "mod2",
-		"key": "h"
+		"mod": "mod1",
+		"key": "q"
 	},
 	"swap-screen-cw": {
 		"mod": "mod2",
@@ -157,51 +158,51 @@
 		"key": "k"
 	},
 	"swap-main": {
-		"mod": "mod1",
+		"mod": "mod2",
 		"key": "enter"
 	},
 	"throw-space-1": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "1"
 	},
 	"throw-space-2": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "2"
 	},
 	"throw-space-3": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "3"
 	},
 	"throw-space-4": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "4"
 	},
 	"throw-space-5": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "5"
 	},
 	"throw-space-6": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "6"
 	},
 	"throw-space-7": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "7"
 	},
 	"throw-space-8": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "8"
 	},
 	"throw-space-9": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "9"
 	},
 	"toggle-float": {
 		"mod": "mod1",
-		"key": "t"
+		"key": "f"
 	},
 	"toggle-tiling": {
-		"mod": "mod2",
+		"mod": "mod1",
 		"key": "t"
 	},
 	"display-current-layout": {

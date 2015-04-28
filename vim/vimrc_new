@@ -6,6 +6,11 @@ set noshowmode
 set encoding=utf-8
 set fileencoding=utf-8
 scriptencoding utf-8
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " GUI
 set t_Co=256
@@ -13,6 +18,17 @@ syntax on
 set background=dark
 set guifont=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 set number
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest,full
+set visualbell
+set ttyfast
+set backspace=indent,eol,start
+set cursorline
+
+let mapleader = ","
 
 " Vundle:start
 filetype off
@@ -46,6 +62,8 @@ Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'Raimondi/delimitMate'
 "Plugin 'Chiel92/vim-autoformat'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'bronson/vim-trailing-whitespace'
 
 " Plugins:Languages
 Plugin 'pangloss/vim-javascript'
@@ -53,7 +71,7 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 
 " Plugins:Webdev
-Plugin 'maksimr/vim-jsbeautify' 
+Plugin 'maksimr/vim-jsbeautify'
 Plugin 'mattn/emmet-vim'
 Plugin 'skammer/vim-css-color'
 Plugin 'marijnh/tern_for_vim'
@@ -67,11 +85,24 @@ filetype plugin indent on
 " Colors
 colorscheme molokai
 
+" Command T
+let g:CommandTInputDebounce = 200
+let g:CommandTFileScanner = "watchman"
+let g:CommandTWildIgnore = &wildignore . ",**/bower_components/*" . ",**/node_modules/*" . ",**/vendor/*"
+let g:CommandTMaxHeight = 30
+let g:CommandTMaxFiles = 500000
+
+" Ctrl P
+let g:ctrlp_custom_ignore= &wildignore . '*/.git/*,*/.hg/*,*/.svn/*,*/bower_components/*,*/node_modules/*'
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -79,7 +110,6 @@ let g:syntastic_check_on_wq = 0
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
       \ 'component': {
       \   'readonly': '%{&readonly?"x":""}',
       \ },
@@ -91,7 +121,7 @@ set laststatus=2
 " Nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " JavaScript
 let g:javascript_enable_domhtmlcss = 1
