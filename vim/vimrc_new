@@ -1,95 +1,133 @@
-" Basic settings
-set nocompatible
-set noshowmode
+" --------------------------------------------------
+" NEOBUNDLE
+" --------------------------------------------------
+if !1 | finish | endif
 
-" File settings
-set encoding=utf-8
-set fileencoding=utf-8
-scriptencoding utf-8
-set autoindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+if has('vim_starting')
+  if &compatible
+    set nocompatible
+  endif
 
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" --------------------------------------------------
+" PLUGINS
+" --------------------------------------------------
+
+" Interface
+NeoBundle 'tomasr/molokai'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'kien/ctrlp.vim'
+
+if executable('ack')
+  NeoBundle 'mileszs/ack.vim'
+endif
+
+if executable('ag')
+  NeoBundle 'rking/ag.vim'
+endif
+
+" VCS
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+
+" Editing
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'Raimondi/delimitMate'
+"NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'bronson/vim-trailing-whitespace'
+
+" Language support
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'cakebaker/scss-syntax.vim'
+NeoBundle 'elzr/vim-json'
+NeoBundle 'tpope/vim-markdown'
+
+" Webdev stuff
+NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'skammer/vim-css-color'
+NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+NeoBundle 'vim-scripts/JavaScript-Indent'
+
+" Vundle End
+call neobundle#end()
+filetype plugin indent on
+NeoBundleCheck
+
+" --------------------------------------------------
 " GUI
+" --------------------------------------------------
+colorscheme molokai
 set t_Co=256
 syntax on
 set background=dark
-set guifont=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+set guifont=Sauce\ Code\ Powerline\ Light\ 12
 set number
 set showmode
+set sidescrolloff=2
 set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set ttyfast
-set backspace=indent,eol,start
 set cursorline
+set display+=lastline
+set colorcolumn=120
 
-let mapleader = ","
+" --------------------------------------------------
+" TEXT FORMAT
+" --------------------------------------------------
+set linebreak
+set showbreak=↪\ \
 
-" Vundle:start
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" --------------------------------------------------
+" FILE ENCODING
+" --------------------------------------------------
+set encoding=utf-8
+set fileencoding=utf-8
+scriptencoding utf-8
 
-" Plugins
-Plugin 'gmarik/Vundle.vim'
+" --------------------------------------------------
+" TAB & INDENT
+" --------------------------------------------------
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set backspace=indent,eol,start
 
-" Plugins:Interface
-Plugin 'tomasr/molokai'
-Plugin 'scrooloose/nerdtree'
-Plugin 'itchyny/lightline.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
-" Plugin 'ryanoasis/vim-webdevicons'
-Plugin 'chriskempson/base16-vim'
+" --------------------------------------------------
+" SEARCH
+" --------------------------------------------------
+set incsearch
+set smartcase
 
-" Plugins:VCS
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+" --------------------------------------------------
+" KEYMAP
+" --------------------------------------------------
+let mapleader = " "
+map <C-n> :NERDTreeToggle<CR> i
 
-" Plugins:Editing
-Plugin 'tpope/vim-surround'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'ervandew/supertab'
-Plugin 'godlygeek/tabular'
-Plugin 'Raimondi/delimitMate'
-"Plugin 'Chiel92/vim-autoformat'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'bronson/vim-trailing-whitespace'
-
-" Plugins:Languages
-Plugin 'pangloss/vim-javascript'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
-
-" Plugins:Webdev
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'mattn/emmet-vim'
-Plugin 'skammer/vim-css-color'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'vim-scripts/JavaScript-Indent'
-
-" Vundle:end
-call vundle#end()
-filetype plugin indent on
-
-" Colors
-colorscheme molokai
-
-" Command T
-let g:CommandTInputDebounce = 200
-let g:CommandTFileScanner = "watchman"
-let g:CommandTWildIgnore = &wildignore . ",**/bower_components/*" . ",**/node_modules/*" . ",**/vendor/*"
-let g:CommandTMaxHeight = 30
-let g:CommandTMaxFiles = 500000
+" --------------------------------------------------
+" PLUGIN SETTINGS
+" --------------------------------------------------
 
 " Ctrl P
 let g:ctrlp_custom_ignore= &wildignore . '*/.git/*,*/.hg/*,*/.svn/*,*/bower_components/*,*/node_modules/*'
@@ -109,13 +147,67 @@ let g:syntastic_check_on_wq = 0
 
 " Lightline
 let g:lightline = {
-      \ 'component': {
-      \   'readonly': '%{&readonly?"x":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-      \ }
+    \ 'colorscheme': 'default',
+    \ 'mode_map': { 'c': 'NORMAL' },
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'modified': 'MyModified',
+    \   'readonly': 'MyReadonly',
+    \   'fugitive': 'MyFugitive',
+    \   'filename': 'MyFilename',
+    \   'fileformat': 'MyFileformat',
+    \   'filetype': 'MyFiletype',
+    \   'fileencoding': 'MyFileencoding',
+    \   'mode': 'MyMode',
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' }
+    \ }
 set laststatus=2
+
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! MyReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? ' '._ : ''
+  endif
+  return ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! MyFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! MyMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 
 " Nerdtree
 autocmd StdinReadPre * let s:std_in=1
@@ -133,4 +225,3 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " Key mappings
-map <C-n> :NERDTreeToggle<CR> i
