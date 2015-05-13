@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-Use gnu stow to install individual modules.
+Use GNU `stow` to install individual modules.
