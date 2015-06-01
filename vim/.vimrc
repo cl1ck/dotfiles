@@ -94,7 +94,6 @@ set colorcolumn=120
 " TEXT FORMAT
 " --------------------------------------------------
 set linebreak
-set showbreak=↪\ \
 
 " --------------------------------------------------
 " FILE ENCODING
