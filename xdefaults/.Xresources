@@ -1,5 +1,4 @@
-!#include "repos/dotfiles/Xdefaults/colorthemes/xoria256.xresources"
-#include "repos/dotfiles/Xdefaults/colorthemes/rootdigga2.xresources"
+#include ".colorthemes/rootdigga2.xresources"
 URxvt*font: xft:Liberation Mono for Powerline:pixelsize=11
 ! urxvt.url-launcher:     /usr/bin/firefox
 ! urxvt.matcher.button:   1
