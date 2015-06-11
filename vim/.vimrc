@@ -19,6 +19,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " --------------------------------------------------
 
 " Interface
+NeoBundle 'Shougo/vimproc.vim', {
+    \ 'build' : {
+    \     'windows' : 'tools\\update-dll-mingw',
+    \     'cygwin' : 'make -f make_cygwin.mak',
+    \     'mac' : 'make -f make_mac.mak',
+    \     'linux' : 'make',
+    \     'unix' : 'gmake',
+    \    },
+    \ }
 NeoBundle 'tomasr/molokai'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'itchyny/lightline.vim'

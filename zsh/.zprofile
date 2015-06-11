@@ -82,3 +82,5 @@ fi
 
 # other exports
 export GOPATH='/Users/rdg/go/'
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
