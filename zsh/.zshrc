@@ -12,6 +12,7 @@ antigen bundles <<EOBUNDLES
   jimmijj/zsh-syntax-highlighting
   zsh-users/zsh-history-substring-search
   tarruda/zsh-autosuggestions
+  unixorn/autoupdate-antigen.zshplugin
 
   # Navigation
   autojump
@@ -21,7 +22,7 @@ antigen bundles <<EOBUNDLES
   git-extras
   bobthecow/git-flow-completion
 
-  # Tools of the trade
+  # Tools
   gem
   composer
   bundler
@@ -39,6 +40,8 @@ antigen bundles <<EOBUNDLES
   # Additional features
   ascii-soup/zsh-url-highlighter
 
+  # Webdev
+  walesmd/caniuse.plugin.zsh
 EOBUNDLES
 
 # Load the theme.

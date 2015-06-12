@@ -1,0 +1,8 @@
+tap 'homebrew/bundle'
+tap 'rcmdnk/file'
+brew 'cask'
+brew 'git-flow'
+brew 'openssl'
+brew 'python'
+brew 'ranger'
+brew 'stow'
