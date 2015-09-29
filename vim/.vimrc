@@ -29,7 +29,7 @@ NeoBundle 'Shougo/vimproc.vim', {
     \    },
     \ }
 NeoBundle 'tomasr/molokai'
-NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'sjl/gundo.vim'
@@ -48,14 +48,14 @@ NeoBundle 'airblade/vim-gitgutter'
 " Editing
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'godlygeek/tabular'
+" NeoBundle 'scrooloose/nerdcommenter'
+" NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'Lokaltog/vim-easymotion'
+" NeoBundle 'ervandew/supertab'
+" NeoBundle 'godlygeek/tabular'
 NeoBundle 'Raimondi/delimitMate'
 "NeoBundle 'Chiel92/vim-autoformat'
-NeoBundle 'terryma/vim-multiple-cursors'
+" NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'bronson/vim-trailing-whitespace'
 
 " Language support
@@ -66,10 +66,10 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'tpope/vim-markdown'
 
 " Webdev stuff
-NeoBundle 'maksimr/vim-jsbeautify'
+" NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'skammer/vim-css-color'
-NeoBundle 'marijnh/tern_for_vim'
+" NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'vim-scripts/JavaScript-Indent'
 
@@ -131,7 +131,9 @@ set smartcase
 " KEYMAP
 " --------------------------------------------------
 let mapleader = " "
-map <C-n> :NERDTreeToggle<CR> i
+map <C-n> :NERDTreeToggle<CR>
+nnoremap <F12> :set invpaste paste?<CR>
+" set pastetoggle=<F12>
 
 " --------------------------------------------------
 " PLUGIN SETTINGS
