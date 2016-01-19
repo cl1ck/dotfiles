@@ -1,4 +1,4 @@
-source ./antigen/antigen.zsh
+source ~/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -8,7 +8,6 @@ antigen bundles <<EOBUNDLES
   # Basics
   sudo
   command-not-found
-  colored-man
   jimmijj/zsh-syntax-highlighting
   zsh-users/zsh-history-substring-search
   tarruda/zsh-autosuggestions
