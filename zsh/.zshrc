@@ -8,10 +8,9 @@ antigen bundles <<EOBUNDLES
   # Basics
   sudo
   command-not-found
-  colored-man
   jimmijj/zsh-syntax-highlighting
-  zsh-users/zsh-history-substring-search
   tarruda/zsh-autosuggestions
+  zsh-users/zsh-history-substring-search
   unixorn/autoupdate-antigen.zshplugin
 
   # Navigation
@@ -50,6 +49,8 @@ antigen theme desyncr/zshrc themes/af-magic-mod
 # exports
 export EDITOR=vim
 export open=chrome
+export LANG=en_US.utf8
+export LC_ALL=en_US.utf8
 
 # Tell antigen that you're done.
 antigen apply
