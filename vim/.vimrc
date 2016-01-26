@@ -60,6 +60,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 
 " Language support
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'elzr/vim-json'
@@ -77,6 +78,11 @@ NeoBundle 'vim-scripts/JavaScript-Indent'
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
+
+" --------------------------------------------------
+" SYS
+" --------------------------------------------------
+set backupcopy=yes
 
 " --------------------------------------------------
 " GUI
