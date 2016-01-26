@@ -1,4 +1,4 @@
-source /var/www/vhosts/cl1ck0ne.net/antigen/antigen.zsh
+source ~/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
