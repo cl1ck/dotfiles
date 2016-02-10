@@ -52,5 +52,9 @@ export open=chrome
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
 
+# nvm
+export PATH=$PATH:~/.node/bin
+source ~/.nvm/nvm.sh
+
 # Tell antigen that you're done.
 antigen apply
