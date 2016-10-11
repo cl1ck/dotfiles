@@ -1,0 +1,5 @@
+OHMYGIT=~/.oh-my-git/
+if [ ! -f $OHMYGIT/prompt.sh ]; then
+  git clone https://github.com/arialdomartini/oh-my-git.git ~/.oh-my-git
+fi
+. ~/.oh-my-git/prompt.sh

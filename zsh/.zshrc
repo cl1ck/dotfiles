@@ -1,5 +1,8 @@
 #!/bin/zsh
-ANTIGEN=$HOME/.antigen/
+ANTIGEN=~/.antigen/
+
+autoload -U colors && colors
+export TERM="xterm-256color"
 
 # Antigen
 if [ ! -f $ANTIGEN/antigen.zsh ]; then
