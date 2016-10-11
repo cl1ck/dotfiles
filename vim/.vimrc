@@ -121,9 +121,9 @@ scriptencoding utf-8
 " TAB & INDENT
 " --------------------------------------------------
 set autoindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set backspace=indent,eol,start
 
