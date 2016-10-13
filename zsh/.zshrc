@@ -1,5 +1,5 @@
 #!/bin/zsh
-ANTIGEN=~/.antigen/
+ANTIGEN=$HOME/.antigen/
 
 autoload -U colors && colors
 export TERM="xterm-256color"
@@ -66,7 +66,8 @@ EOBUNDLES
   antigen theme desyncr/zshrc themes/af-magic-mod
 
   # nvm settings
-  source ~/.nvm/nvm.sh
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
   antigen apply
   unalias rm
@@ -88,4 +89,4 @@ export EDITOR=vim
 export open=chrome
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
-export PATH=$PATH:~/.node/bin
+export PATH=$PATH:$HOME/.node/bin

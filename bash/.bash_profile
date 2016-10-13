@@ -10,3 +10,5 @@
 . ~/.bashrc.d/prompt
 . ~/.bashrc.d/completion
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
