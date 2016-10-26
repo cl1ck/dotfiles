@@ -1,37 +1,27 @@
-function get_xserver ()
-{
-    case $TERM in
-        xterm )
-            XSERVER=$(who am i | awk '{print $NF}' | tr -d ')''(' )
-            XSERVER=${XSERVER%%:*}
-            ;;
-            aterm | rxvt)
-            # Find some code that works here. ...
-            ;;
-    esac
-}
+date=$(date)
+hour=$(date +"%H")
 
-if [ -z ${DISPLAY:=""} ]; then
-    get_xserver
-    if [[ -z ${XSERVER}  || ${XSERVER} == $(hostname) ||
-       ${XSERVER} == "unix" ]]; then
-          DISPLAY=":0.0"          # Display on local host.
-    else
-       DISPLAY=${XSERVER}:0.0     # Display on remote host.
-    fi
+if [ $hour -ge 0 -a $hour -lt 12 ]
+then
+  greet="Good morning, $USER."
+elif [ $hour -ge 12 -a $hour -lt 18 ]
+then
+  greet="Good afternoon, $USER."
+else # it is good evening till midnight
+  greet="Good evening, $USER."
 fi
 
-export DISPLAY
+host=$(hostname -a)
+login="You logged in to $host at $date"
 
-echo -e "${BCyan}This is BASH ${BRed}${BASH_VERSION%.*}${BCyan}\
-- DISPLAY on ${BRed}$DISPLAY${NC}\n"
-date
+echo -e "${BBlue}$greet $login${NC}"
+
 if [ -x /usr/games/fortune ]; then
     /usr/games/fortune -s
 fi
 
-function _exit() # run upon exit of shell.
+function _exit()
 {
-    echo -e "${BRed}Hasta la vista, baby${NC}"
+    echo -e "${BBlue}See you soon at ${host}${NC}"
 }
 trap _exit EXIT
