@@ -13,7 +13,10 @@ shopt -s no_empty_cmd_completion
 shopt -s cmdhist
 shopt -s histappend histreedit histverify
 shopt -s extglob
+shopt -s histappend
 
 # Disable options:
 shopt -u mailwarn
 unset MAILCHECK
+
+PROMPT_COMMAND='history -a'
