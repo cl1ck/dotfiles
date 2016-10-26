@@ -1,0 +1,28 @@
+COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
+
+
+_get_longopts()
+{
+  #$1 --help | sed  -e '/--/!d' -e 's/.*--\([^[:space:].,]*\).*/--\1/'| \
+  #grep ^"$2" |sort -u ;
+    $1 --help | grep -o -e "--[^[:space:].,]*" | grep -e "$2" |sort -u
+}
+
+_longopts()
+{
+    local cur
+    cur=${COMP_WORDS[COMP_CWORD]}
+
+    case "${cur:-*}" in
+       -*)      ;;
+        *)      return ;;
+    esac
+
+    case "$1" in
+       \~*)     eval cmd="$1" ;;
+         *)     cmd="$1" ;;
+    esac
+    COMPREPLY=( $(_get_longopts ${1} ${cur} ) )
+}
+complete  -o default -F _longopts configure bash
+complete  -o default -F _longopts wget id info a2ps ls recode

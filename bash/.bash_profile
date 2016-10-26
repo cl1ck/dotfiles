@@ -6,9 +6,8 @@
 . ~/.bashrc.d/colors
 . ~/.bashrc.d/greeting
 . ~/.bashrc.d/aliases
-. ~/.bashrc.d/functions
-. ~/.bashrc.d/prompt
-. ~/.bashrc.d/completion
+. ~/.bashrc.d/prompts/cl1ck
+. /etc/bash_completion
+for f in ~/.bashrc.d/completions/*; do source $f; done
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+export NODE_ENV=development
