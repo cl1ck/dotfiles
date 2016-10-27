@@ -6,7 +6,13 @@
 . ~/.bashrc.d/colors
 . ~/.bashrc.d/greeting
 . ~/.bashrc.d/aliases
+. ~/.bashrc.d/ssh
+
+# active prompt
 . ~/.bashrc.d/prompts/cl1ck
+# . ~/.bashrc.d/prompts/ohmygit
+
+# bash completion
 . /etc/bash_completion
 for f in ~/.bashrc.d/completions/*; do source $f; done
 
