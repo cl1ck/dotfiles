@@ -89,4 +89,4 @@ export EDITOR=vim
 export open=chrome
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
-export PATH=$PATH:$HOME/.node/bin
+export PATH=$PATH:$HOME/.node/bin:$HOME/.yarn-cache/.global/node_modules/.bin/
