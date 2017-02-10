@@ -1,4 +1,30 @@
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-set show-all-if-ambiguous on
+set completion-query-items 50
 set completion-ignore-case on
+set bell-style audible
+set meta-flag on
+set input-meta on
+set output-meta off
+set convert-meta on
+set visible-stats off
+set mark-directories on
+set show-all-if-ambiguous off
+$if mode=emacs
+    "\C-?": backward-kill-line
+    "\e[2~": paste-from-clipboard
+    "\e[5~": beginning-of-history
+    "\e[6~": end-of-history
+
+    $if term=msys # rxvt
+        "\e[7~": beginning-of-line
+        "\e[8~": end-of-line
+        "\e[11~": display-shell-version
+        "\e[15~": re-read-init-file
+    $else
+        "\e[1~": beginning-of-line
+        "\e[4~": end-of-line
+        "\e[3~": delete-char
+        "\M-\e[D": backward-word
+        "\M-\e[C": forward-word
+        "\e\e": kill-whole-line
+    $endif
+$endif
