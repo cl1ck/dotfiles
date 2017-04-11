@@ -8,6 +8,10 @@ set convert-meta on
 set visible-stats off
 set mark-directories on
 set show-all-if-ambiguous off
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
 $if mode=emacs
     "\C-?": backward-kill-line
     "\e[2~": paste-from-clipboard
