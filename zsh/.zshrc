@@ -43,7 +43,6 @@ if [ -f $ANTIGEN/antigen.zsh ]; then
     github
     vagrant
     ruby
-    rbenv
     bundler
     gem
     virtualenv
@@ -87,5 +86,3 @@ export EDITOR=vim
 export open=chrome
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
-
-eval "$(rbenv init -)"
