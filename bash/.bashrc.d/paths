@@ -1,1 +1,0 @@
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/bin:$PATH:$HOME/.yarn-cache/.global/node_modules/.bin/"
