@@ -51,14 +51,13 @@ if [ -f $ANTIGEN/antigen.zsh ]; then
     pip
     compose
     node
-    npm
     nvm
 
     ascii-soup/zsh-url-highlighter
     Tarrasch/zsh-autoenv
     zsh-users/zsh-syntax-highlighting
     tarruda/zsh-autosuggestions
-    zsh-users/zsh-completions src
+    zsh-users/zsh-completions
     zsh-users/zsh-history-substring-search
 EOBUNDLES
 
@@ -89,4 +88,6 @@ export EDITOR=vim
 export open=chrome
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
-export PATH=$PATH:$HOME/.node/bin:$HOME/.yarn-cache/.global/node_modules/.bin/
+export PATH=$HOME/.rbenv/plugins/ruby-build/bin:$HOME/.rbenv/bin:$PATH:$HOME/.node/bin:$HOME/.yarn-cache/.global/node_modules/.bin/
+
+eval "$(rbenv init -)"
