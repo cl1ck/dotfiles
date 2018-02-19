@@ -86,3 +86,4 @@ export EDITOR=vim
 export open=chrome
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

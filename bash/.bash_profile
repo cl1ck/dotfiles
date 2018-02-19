@@ -2,7 +2,6 @@
 [ -z "$PS1" ] && return
 
 . ~/.bashrc.d/settings
-. ~/.bashrc.d/paths
 . ~/.bashrc.d/colors
 . ~/.bashrc.d/greeting
 . ~/.bashrc.d/aliases
