@@ -15,4 +15,7 @@
 . /etc/bash_completion
 for f in ~/.bashrc.d/completions/*; do source $f; done
 
+# tools
+for f in ~/.bashrc.d/tools/*; do source $f; done
+
 export NODE_ENV=development
